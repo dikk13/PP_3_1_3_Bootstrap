@@ -36,13 +36,6 @@ public class UserServiceImp implements UserService{
 
    @Transactional
    @Override
-   public void saveUser(User user) {
-      user.setPassword(bCryptPasswordEncoder().encode(user.getPassword()));
-      userRepository.save(user);
-   }
-
-   @Transactional
-   @Override
    public void delete(int id) {
       userRepository.deleteById(id);
    }
